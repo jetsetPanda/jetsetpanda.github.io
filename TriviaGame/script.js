@@ -156,8 +156,9 @@ function getWrongAns() {
                 console.log("correctTally: " + correctTally);
                 console.log("wrongTally: " + wrongTally);          
                 questionNum++;
-                console.log("questionNum");
-                questionCard(questionNum);
+                questionsLeft--;
+                console.log("questionNum: " + questionNum + " questionsLeft: " + questionsLeft);
+                questionCard(questionNum, correctTally, wrongTally, questionsLeft);
 
             } else {
                 console.log("Wrong!");
@@ -165,8 +166,9 @@ function getWrongAns() {
                 console.log("correctTally: " + correctTally);
                 console.log("wrongTally: " + wrongTally);        
                 questionNum++;
-                console.log("questionNum");
-                questionCard(questionNum);
+                questionsLeft--;
+                console.log("questionNum: " + questionNum + " questionsLeft: " + questionsLeft);
+                questionCard(questionNum, correctTally, wrongTally, questionsLeft);
             }
     };
 
@@ -174,25 +176,29 @@ function getWrongAns() {
     function gameOver() {
         $("#clock").hide('slow');
         $("#displayArea").hide('slow');
-        $("#gameOver").text("Thanks for Playing!");
+        $(".logobar").hide('slow');
+        $("#promptz").text("Thanks for Playing");
         $("#gameOver").addClass("bg-success");
+        $("#biglogo").show();
+        $("#winz").text("Correct Answers: " + correctTally);
+        $("#lozzez").text("Wrong Answers: " + wrongTally);
         $("#gameOver").removeClass("d-none");
+
     }
 
     function timesUp() {
         $("#clock").hide('slow');
         $("#displayArea").hide('slow');
-        $("#gameOver").text("Thanks for Playing!");
+        $(".logobar").hide('slow');
+        $("#promptz").text("Times Up");
         $("#gameOver").addClass("bg-danger");
+        $("#biglogo").show();
+        $("#winz").text("Correct Answers: " + correctTally);
+        $("#lozzez").text("Wrong Answers: " + wrongTally);
         $("#gameOver").removeClass("d-none");
     }
-
-    function warningclock() {
-        $("#clock").removeclass("text-white");
-        $("#clock").addClass("")
-    }
     
-    function questionCard(arrIndx) {
+    function questionCard(arrIndx, correctz, wrongz, qleftz) {
         console.log("arrIndx is: " + arrIndx);
         if (arrIndx <= 9 ) {
             $("#questions").empty();
@@ -212,10 +218,15 @@ function getWrongAns() {
             $("#questions").append(preguntas4);
             preguntas4.text(questions[arrIndx].incorrect_answers[2]);
 
+            $("#qremain").text(qleftz);
+            $("#correctDisp").text(correctz);
+            $("#incorrectDisp").text(wrongz);
+
             $(".ansbutton").click(function() {
                 var answer = $(this).text();
                 console.log(answer);
                 checkAnswer(answer);
+
             });
         } else {
             gameOver();
@@ -227,13 +238,12 @@ function getWrongAns() {
     $("#startButton").click(function() {
         console.log("start button clicked");
         startCountdown();
-        setTimeout(gameOver, 36000);
-        setTimeout(warningClock, 3000);
+        setTimeout(timesUp, 36000);
         $("#startButton").hide('slow');
-        $("#biglogo").hide('slow');
-        // $("#clock").show('slow');
+        $("#biglogo").hide();
+        $("#clock").removeClass('d-none');
         $("#questions").removeClass('d-none');
-        $("#logobar").removeClass('d-none');
+        $(".logobar").removeClass('d-none');
     });
 
 
