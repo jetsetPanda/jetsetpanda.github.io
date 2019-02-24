@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Fixed fullscreen backgrounds - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Comfortaa|Forum|Gruppo|Laila|Montserrat|Poiret+One" rel="stylesheet">
+
+	<!-- font-family: 'Comfortaa', cursive;
+	font-family: 'Montserrat', sans-serif;
+	font-family: 'Laila', serif;
+	font-family: 'Forum', cursive;
+	font-family: 'Cinzel Decorative', cursive;
+	font-family: 'Gruppo', cursive;
+	font-family: 'Poiret One', cursive; -->
+
+<style>
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1 {
+		font-size: 5em;
+		font-family: 'Cinzel Decorative', cursive;
+		/* text-shadow:5px 5px 5px rgb(124, 123, 119); */
+		color: black;
+		margin:0;
+		padding:0;
+	}
+
+	h3 {
+		font-size: 2em;
+
+		color: rgb(44, 44, 44);
+		margin:0;
+		padding:0;
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+
+	/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	#section0,
+	#section1,
+	#section2,
+	#section3,
+    #slide1,
+    #slide2{
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	/* Defining each sectino background and styles
+	* --------------------------------------- */
+	#section0{
+		background-image: url(images/porkRack.jpg);
+	}
+	#section0 h1{
+		top: 30%;
+		transform: translateY(-50%);
+		position: relative;
+		font-family: 'Montserrat', sans-serif;
+
+	}
+	#section2{
+		background-image: url(images/steakTartare.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3{
+		background-image: url(images/scallops.jpg);
+		padding: 6% 0 0 0;
+	}
+	#section3 h4{
+		color: #000;
+	}
+
+
+	/*Adding background for the slides
+	* --------------------------------------- */
+	#slide1{
+		background-image: url(images/porkRack.jpg);
+		padding: 6% 0 0 0;
+	}
+	#slide2{
+		background-image: url(images/scallops.jpg);
+		padding: 6% 0 0 0;
+	}
+
+
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu li a {
+		color: #fff;
+	}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+</head>
+<body>
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<h1 style="color: black; font-family: 'Gruppo', cursive; font-size: 5em;">CHESTER FORD <br /><span style="color: white; font-size: 4rem; font-family: 'Forum', cursive;">Manhattan Catering Co.</span></h1>
+	</div>
+	<div class="section" id="section1">
+		<div class="slide" id="slide1" ><h1>Corporate Events</h1></div>
+		<div class="slide" id="slide2"><h1 style="color: white;">Daily Catering</h1></div>
+	</div>
+	<div class="section" id="section2"><h1>Sample Menus</h1>
+		<div class="card" style="background-color:rgba(255, 255, 255, 0.342)">
+				<div class="card-body">
+					<h4 class="card-title text-bold" style="font-family: 'Cinzel Decorative', cursive;">We will be happy to create a bespoke menu according to your desires and budget range.</h4>
+					<div class="row">
+					<div class="col-md-6"><h5 class="card-body" style="font-family: 'Cinzel Decorative', cursive;">Breakfast Selections<br>
+
+							Breakfast Plan #1 - Continental Breakfast
+							Minimum 4 people required<br>
+							
+							Assorted Mini Pastries, Mini Bagels with Cream Cheese, Butter, Jams,
+							
+							$6.50/per person<br>
+							
+							Breakfast Plan #2 - Continental Breakfast with Fruit
+							
+							Minimum 4 people required<br>
+							
+							Assorted Mini Pastries, Mini Bagels with Cream Cheese, Butter, Jams, Sliced Fruit Platter
+							
+							$9.95/per person<br>
+							
+							Breakfast Plan #3 – Hot Breakfast Buffet
+							Minimum 6 people required
+							
+							Eggs, French Toast or Pancakes, Bacon or Sausage, Potatoes, Toast
+							
+							$15.50/per person<br>
+							
+							Breakfast Plan #4 – New Yorker
+							Minimum 6 people required
+							
+							Nova Scotia Smoked Salmon, Capers, Red Onions, Tomatoes, Egg, Lemon,
+							
+							Assorted Mini Bagels
+							$13.50/per person
+							
+							Snack Selections Available All Day
+							Minimum 10 people required
+							Please select from the choices below:
+							Sliced Fruit Platter - $7.50/pp
+							
+							Imported &amp; Domestic Cheese Platter - $10.99/pp
+							Mediterranean Platter – Small - $188.62 Large - $245
+							
+							Crudité Platter - $8/25/pp
+							Yogurt Parfaits - $7.75/pp
+							Cookies &amp; Brownies - $6.95/pp</h5></div>
+					<div class="col-md-6"><h5 class="card-body" style="font-family: 'Cinzel Decorative', cursive;">
+							PASSED HORS D’ OEUVRES <br><br>
+							LAMB LOLLIPOPS
+							With Balsamic Reduction<br><br>
+							MINI FRIED CHICKEN
+							With Sriracha Aioli on Spanish Tortilla (Potato)<br><br>
+							WILD MUSHROOMS & GOAT CHEESE TARTLETS
+							With Roasted Sun Dried Tomatoes<br><br>
+							MARINATED BEEF FILET CANAPES
+							With plum and leek wine sauce<br><br>
+							MANCHEGO & CHORIZO ARRANCINI<br><br>
+							MINI GRILLED CHEESE AGED GOUDA SANDWICHES
+							Served with Tomato Soup
+						</h5>
+					</div>
+					</div>
+					</div>
+				</div>
+	
+	</div>
+	<div class="section" id="section3">
+		<h1 style="font-size: 3rem">Inquiries</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+
+						<div class="card" style="background-color:rgba(255, 255, 255, 0.342)">
+								<div class="card-body">
+									<h5 class="card-title" style="font-family: 'Cinzel Decorative', cursive;">We will gladly reach out to you as soon as possible</h5>
+									<form class="text-left">
+											<div class="form-row">
+													<div class="col-md-4 mb-3">
+														<label for="validationCustom01">Name</label>
+														<input type="text" class="form-control" id="validationCustom01" placeholder="Full Name">
+													</div>
+													<div class="col-md-4 mb-3">
+														<label for="validationCustom02">Company</label>
+														<input type="text" class="form-control" id="validationCustom02" placeholder="Company Name">
+													</div>
+													<div class="col-md-4 mb-3">
+															<label for="validationCustom02">Phone</label>
+															<input type="text" class="form-control" id="validationCustom02" placeholder="Phone no">
+														</div>
+												</div>
+											<!-- <div class="form-group">
+													<label for="exampleInputEmail1">Name</label>
+													<input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+				
+												</div> -->
+											<div class="form-group">
+												<label for="exampleInputEmail1">Email address</label>
+												<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+												<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+											</div>
+											<div class="form-group">
+													<label for="exampleFormControlTextarea1">Special Requests and Considerations</label>
+													<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+												</div>
+											<div class="form-check">								
+												<input type="checkbox" class="form-check-input" id="exampleCheck1">
+												<label class="form-check-label" for="exampleCheck1">This is for an urgent request.</label><br>
+												<input type="checkbox" class="form-check-input" id="exampleCheck1">
+												<label class="form-check-label" for="exampleCheck1">I prefer contact via phone</label><br>
+												<input type="checkbox" class="form-check-input" id="exampleCheck1">
+												<label class="form-check-label" for="exampleCheck1">Add me to your mailing list</label>
+				
+											</div>
+											<button type="submit" class="btn btn-warning">Submit</button>
+										</form>
+									</div>
+								</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="dist/fullpage.js"></script>
+<script type="text/javascript" src="examples.js"></script>
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        verticalCentered: false,
+
+        //to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+        css3:false
+    });
+</script>
+</body>
+</html>
