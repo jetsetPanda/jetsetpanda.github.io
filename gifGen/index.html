@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jetset GIFengine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Gloria+Hallelujah|Luckiest+Guy|Press+Start+2P" rel="stylesheet">
+<style>
+/* font-family: 'Luckiest Guy', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Press Start 2P', cursive; */
+body { 
+  /* background-color: black; */
+background: url("https://www.toptal.com/designers/subtlepatterns/patterns/black_denim.png");
+}
+.vgfont {
+    font-family: 'Press Start 2P', cursive;
+}
+.roundfont {
+    font-family: 'Fredoka One', cursive;
+}
+
+.input-group-text {
+    color: white;
+    background-color: black;
+    border: 1px solid #0c5460;
+
+}
+.caption {
+  font-size: 0.75rem;
+}
+#buttonDiv {
+  min-height: 60px;
+}
+#topC {
+  background-color: rgba(0, 0, 0, 0.226);
+}
+button#userSubmit:hover
+{
+/* taste teh rainbowz */
+background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+color:black;
+-webkit-background-clip: border-box;
+background-clip: border-box;
+  /* font-family: 'Press Start 2P', cursive; */
+}
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.borderBot {
+  border-bottom: 1px solid;
+  border-color: darkgoldenrod;
+}
+</style>
+
+</head>
+<body>
+
+<div id="topC" class="container">
+  <div class="topPart sticky-top">
+    <div class="row px-3 py-2 bg-dark borderBot d-flex justify-content-between">
+
+                <form class="form-inline">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">#</span>
+                        </div>                                    
+                        <input id="userTopic" type="text" class="form-control mr-sm-2 roundfont"  placeholder="feed me topics">
+                    </div>
+                    <button id="userSubmit" type="submit" class="btn btn-primary my-2 my-sm-0 roundfont">Create GIF Generating Buttons!</button>
+                </form>
+
+                <span><h1 class="navbar-brand mb-0 text-right vgfont rainbow">GIFengine19</h1><br><h7 class="vgfont text-right">by:jetsetPanda</h7></span>
+                <!-- <a href="assets/images/kitteh.gif" download>
+                  <img src="assets/images/floppy.png" alt="floppy">Download
+                </a> -->
+    </div>
+    <div id="buttonDiv" class="row bg-dark px-3 py-2 mb-4 rounded-bottom">
+        <div id="buttonDisplay" class="align-middle">
+          <p id="buttonDtext" class="vgfont text-secondary">GIF Generating Buttons Appear Here!</p>
+        </div> 
+    </div>
+  </div>
+    <div id="displayDiv" class="container d-none" style="margin:0; padding: 0;">
+      <div id="infoBar" class="row pl-4 roundfont"></div>
+      <div id="instText"class="row pl-4 mb-4 roundfont"></div>
+      <div id="gifDisplay" class="row mb-4"></div>
+      <div id="moarButton" class="row mb-4"></div>
+      <div id="gifDisplayMore" class="row mb-4"></div>
+      <div id="masButton" class="row mb-4"></div>
+      <div id="gifDisplayMas" class="row mb-4"></div>
+      <div id="endButton" class="row mb-4"></div>
+    </div>
+</div>
+
+<div class="modal fade shadow" id="popz" tabindex="-1" data-keyboard="false" data-backdrop="static" style="background-image: linear-gradient(-90deg, rgb(20, 6, 6), rgb(109, 18, 18));">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">               
+
+          <div class="modal-body text-center vgfont"">
+              <p style="font-size: 2rem; color: red"><img src="assets/images/sonicWag.webp" width="100px" height="100px">WHOA THERE PARDNER!!!</p>
+              <p style="font-size: 1.25rem;">Thanks for using this <i>Shareware</i>!</p>
+              <p>If you don't know what shareware is, then you don't know <a href="https://www.youtube.com/watch?v=GC7Onhm3tto">Doom</a> from <a href="https://www.youtube.com/watch?v=EbCHIYXBts0">Quake!</a></p>
+              <p>"Shareware" is what we now call "freemium" or whatever Candy Crush is...</p> 
+              <p>Anyway, to see 500 more fantastic eyepopping GIFs per search, send 5 Bitcoins to <a href="http://www.instagram.com/jetset.panda">yours truly</a> by clicking below: </p>
+          </div>
+          <div class="modal-footer item-center">
+              <button id="startGame" type="button" class="btn btn-dark text-white btn-lg btn-block roundfont" data-dismiss="modal"><img src="assets/images/sonicRing.gif" width="45px" height="45px"> HERE'S 5 BITCOIN, MOAR GIFS PlZ! <img src="assets/images/sonicRing.gif" width="45px" height="45px"></button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script>
+
+$(document).ready(function() {
+
+function clearAll() {
+  $("#displayDiv").removeClass("d-none");
+  $("#infoBar").empty();
+  $("#instText").empty();
+  $("#gifDisplay").empty(); 
+  $("#moarButton").empty();
+  $("#moarButton").show();
+  $("#gifDisplayMore").empty();
+  $("#masButton").empty();
+  $("#masButton").show();
+  $("#gifDisplayMas").empty();
+  $("#endButton").empty();
+}
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+function displayFirstRow (obj, usrSearchName) {
+  for (var i = 0; i < 4; i++) {
+      var topDiv = $("<div>").addClass("col-md-3");
+      var gifDiv = $("<div>").addClass("thumbnail");
+
+      var caption = $("<div>").addClass("caption text-white roundfont");
+      var rating = obj[i].rating.toUpperCase();
+      var ratingText = $("<p>").text("Rating: " + rating);
+      var title = obj[i].title;
+      var titleText = $("<p>").text("Title: " + title);
+      caption.prepend(ratingText);
+      caption.prepend(titleText);
+
+      var gifImg = $("<img>").addClass(".img-fluid rounded gifToggleOne");
+      gifImg.attr("src", obj[i].images.fixed_width_still.url);
+      gifImg.attr("url-moving", obj[i].images.fixed_width.url);
+      gifImg.attr("url-still", obj[i].images.fixed_width_still.url);
+      gifImg.attr("isgifmoving", "nope");
+
+      gifDiv.prepend(caption);
+      gifDiv.prepend(gifImg);
+
+      topDiv.prepend(gifDiv);
+      $("#gifDisplay").prepend(topDiv);
+      }
+      console.log("first row of GIFs displayed!");
+
+      // toggle GIF animations....
+      $(".gifToggleOne").on("click", function() {
+        var isMoving = $(this).attr("isgifmoving");
+        console.log(`GIF first row clicked, isGifmoving: ${isMoving}`);
+        if (isMoving === "nope") {
+        $(this).attr("src", $(this).attr("url-moving"));
+        $(this).attr("isgifmoving", "yeah");
+        console.log(`Changed GIF to moving`);
+        } 
+        if (isMoving === "yeah") {
+        $(this).attr("src", $(this).attr("url-still"));
+        $(this).attr("isgifmoving", "nope");
+        console.log(`Changed GIF to still`);
+    }
+      });  
+
+      // the moarButton....
+      var moarButton = $("<div>").addClass("btn btn-outline-warning btn-block my-2 my-sm-0 vgfont");
+      var moreText = $("<span>").text(`Show more GIFs of "${usrSearchName}"!!!`);
+      moarButton.prepend(moreText);
+      $("#moarButton").prepend(moarButton);
+}
+
+function displaySecondRow (thingy, usrSrchNm) {
+  $("#moarButton").hide('slow');
+  $("#gifDisplayMore").empty();
+  $("#masButton").empty();
+  $("#masButton").show();
+  $("#gifDisplayMas").empty();
+  $("#endButton").empty();
+    
+  // >>>> DISPLAY MOAR GIFS
+  for (var i = 4; i < 12; i++) {
+    var topDiv = $("<div>").addClass("col-md-3");
+    var gifDiv = $("<div>").addClass("thumbnail");
+
+    var caption = $("<div>").addClass("caption text-white roundfont");
+    var rating = thingy[i].rating.toUpperCase();
+    var ratingText = $("<p>").text("Rating: " + rating);
+    var title = thingy[i].title;
+    var titleText = $("<p>").text("Title: " + title);
+    caption.prepend(ratingText);
+    caption.prepend(titleText);
+
+    var gifImg = $("<img>").addClass(".img-fluid rounded gifToggleTwo");
+    gifImg.attr("src", thingy[i].images.fixed_width_still.url);
+    gifImg.attr("url-moving", thingy[i].images.fixed_width.url);
+    gifImg.attr("url-still", thingy[i].images.fixed_width_still.url);
+    gifImg.attr("isgifmoving", "nope");
+
+    gifDiv.prepend(caption);
+    gifDiv.prepend(gifImg);
+
+    topDiv.prepend(gifDiv);
+    $("#gifDisplayMore").prepend(topDiv);
+  }
+
+  // toggle GIF animations....
+  $(".gifToggleTwo").on("click", function() {
+    var isMoving = $(this).attr("isgifmoving");
+    console.log(`GIF row 2 clicked, isGifmoving: ${isMoving}`);
+    if (isMoving === "nope") {
+        $(this).attr("src", $(this).attr("url-moving"));
+        $(this).attr("isgifmoving", "yeah");
+        console.log(`Changed GIF to moving`);
+        } 
+        if (isMoving === "yeah") {
+        $(this).attr("src", $(this).attr("url-still"));
+        $(this).attr("isgifmoving", "nope");
+        console.log(`Changed GIF to still`);
+    }
+  });  
+
+  // masButton (sponsored by #TacoBell... live Mas)
+  var masButton = $("<div>").addClass("btn btn-outline-warning btn-lg btn-block px-4 my-2 my-sm-0 vgfont");
+  var masText = $("<span>").text(`I Can Haz Moar ${usrSrchNm} GIFZ?!?!!???`);
+  masButton.prepend(masText);
+  $("#masButton").prepend(masButton);
+}
+
+function displayThirdRow(theObj, userSubmit) {
+  $("#masButton").hide('slow');
+  $("#gifDisplayMas").empty();
+  $("#endButton").empty();
+  // I CAN HAZ DISPLAYZ YET MOAR GIFZ
+  for (var i = 12; i < 24; i++) {
+    var topDiv = $("<div>").addClass("col-md-3");
+    var gifDiv = $("<div>").addClass("thumbnail");
+
+    var caption = $("<div>").addClass("caption text-white roundfont");
+    var rating = theObj[i].rating.toUpperCase();
+    var ratingText = $("<p>").text("Rating: " + rating);
+    var title = theObj[i].title;
+    var titleText = $("<p>").text("Title: " + title);
+    caption.prepend(ratingText);
+    caption.prepend(titleText);
+
+    var gifImg = $("<img>").addClass(".img-fluid rounded gifToggleTres");
+    gifImg.attr("src", theObj[i].images.fixed_width_still.url);
+    gifImg.attr("url-moving", theObj[i].images.fixed_width.url);
+    gifImg.attr("url-still", theObj[i].images.fixed_width_still.url);
+    gifImg.attr("isgifmoving", "nope");
+
+    gifDiv.prepend(caption);
+    gifDiv.prepend(gifImg);
+
+    topDiv.prepend(gifDiv);
+    $("#gifDisplayMas").prepend(topDiv);
+  }
+
+  // toggle GIF animations....
+  $(".gifToggleTres").on("click", function() {
+    var isMoving = $(this).attr("isgifmoving");
+    console.log(`GIF row 3 clicked, isGifmoving: ${isMoving}`);
+    if (isMoving === "nope") {
+        $(this).attr("src", $(this).attr("url-moving"));
+        $(this).attr("isgifmoving", "yeah");
+        console.log(`Changed GIF to moving`);
+        } 
+        if (isMoving === "yeah") {
+        $(this).attr("src", $(this).attr("url-still"));
+        $(this).attr("isgifmoving", "nope");
+        console.log(`Changed GIF to still`);
+    }
+  });  
+
+  // endButton (shshsh... they dont know that)
+  var endButton = $("<div>").addClass("btn btn-outline-danger btn-lg btn-block px-4 my-2 my-sm-0 vgfont");
+  var endText = $("<span>").text(`moar m0ar m0aRRR ... Gimme ALL teh GIFS of ze ${userSubmit}!!!`);
+  var kitteh = $("<img>").attr("src", "assets/images/kitteh.gif");
+  endButton.prepend(endText);
+  endButton.append(kitteh);
+  $("#endButton").prepend(endButton);
+}
+
+$("#userSubmit").on("click", function(e) {
+    e.preventDefault();
+    var topic = $("#userTopic").val().trim();
+
+    $('#buttonDtext').addClass("d-none");
+    var newButton = $("<button>").addClass("btn btn-outline-warning vgfont gifbutton my-1 mx-1");
+    newButton.attr("type","button");
+    newButton.attr("data-topic",topic);
+    newButton.text(topic);
+    console.log("newButton is: " + newButton);
+    $("#buttonDisplay").prepend(newButton);
+
+
+    $(".gifbutton").on("click", function() {
+      var giphyTarget = $(this).attr("data-topic");
+      var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Y4qlZyj6iyGpwyb1dBVgeqPg87J8D8Zd&q=" +
+        giphyTarget + "&limit=30&lang=en";
+      console.log("queryURL: " + queryURL);
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      .then(function(response) {
+
+          clearAll();
+
+          var results = response.data;
+          var infoText = $("<h2>").addClass("text-white").text(`Here are GIFs of "${giphyTarget}":`);
+          var instText = $("<h6>").addClass("text-secondary").text(`Click on each GIF to toggle animations!`);
+          // var brk = $("<br>");
+          $("#infoBar").append(infoText);
+          // $("#infoBar").append(brk);
+          $("#instText").append(instText);
+
+          displayFirstRow(results, giphyTarget);
+              
+          $("#moarButton").on("click", function() {
+            displaySecondRow(results,giphyTarget);        
+          });
+
+          $("#masButton").on("click", function() {
+            displayThirdRow(results,giphyTarget);
+          });          
+
+          $("#endButton").on("click", function() {
+            $("#popz").modal('show');
+
+
+
+          });          
+      });
+    });
+});
+
+
+
+});
+// i got results[i].images.fixed_width.url
+// and results[i].images.fixed_width_still.url
+
+
+          // $(".giftoggle").on("click", function() {
+          //       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+          //       var state = $(this).attr("isgifmoving");
+          //       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+          //       // Then, set the image's data-state to animate
+          //       // Else set src to the data-still value
+          //   console.log(`GIF clicked, state: ${state}`);
+          //       if (state === "nope") {
+          //         $(this).attr("src", $(this).attr("url-moving"));
+          //         $(this).attr("isgifmoving", "yeah");
+          //         console.log(`Changed GIF to moving`);
+          //       } else {
+          //         $(this).attr("src", $(this).attr("url-still"));
+          //         $(this).attr("isgifmoving", "nope");
+          //         console.log(`Changed GIF to still`);
+          //       }
+          // });
+
+          // GIF display round 1
+
+          
+
+
+// $(".giftoggle").on("click", function() {
+
+// });
+</script>
+
+</body>
+</html>
