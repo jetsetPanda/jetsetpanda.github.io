@@ -7,59 +7,7 @@
     <title>jetset GIFengine</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Gloria+Hallelujah|Luckiest+Guy|Press+Start+2P" rel="stylesheet">
-<style>
-/* font-family: 'Luckiest Guy', cursive;
-font-family: 'Gloria Hallelujah', cursive;
-font-family: 'Fredoka One', cursive;
-font-family: 'Press Start 2P', cursive; */
-body { 
-  /* background-color: black; */
-background: url("https://www.toptal.com/designers/subtlepatterns/patterns/black_denim.png");
-}
-.vgfont {
-    font-family: 'Press Start 2P', cursive;
-}
-.roundfont {
-    font-family: 'Fredoka One', cursive;
-}
-
-.input-group-text {
-    color: white;
-    background-color: black;
-    border: 1px solid #0c5460;
-
-}
-.caption {
-  font-size: 0.75rem;
-}
-#buttonDiv {
-  min-height: 60px;
-}
-#topC {
-  background-color: rgba(0, 0, 0, 0.226);
-}
-button#userSubmit:hover
-{
-/* taste teh rainbowz */
-background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-color:black;
--webkit-background-clip: border-box;
-background-clip: border-box;
-  /* font-family: 'Press Start 2P', cursive; */
-}
-.rainbow {
-  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-  color:transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-.borderBot {
-  border-bottom: 1px solid;
-  border-color: darkgoldenrod;
-}
-</style>
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
@@ -85,7 +33,7 @@ background-clip: border-box;
     </div>
     <div id="buttonDiv" class="row bg-dark px-3 py-2 mb-4 rounded-bottom">
         <div id="buttonDisplay" class="align-middle">
-          <p id="buttonDtext" class="vgfont text-secondary">GIF Generating Buttons Appear Here!</p>
+          <p id="buttonDtext" class="vgfont text-secondary magic">Add topics above and GIF generating buttons appear here!</p>
         </div> 
     </div>
   </div>
@@ -123,8 +71,8 @@ background-clip: border-box;
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- <script src="assets/scripts/script.js"></script> -->
 <script>
-
 $(document).ready(function() {
 
 function clearAll() {
@@ -204,7 +152,7 @@ function displaySecondRow (thingy, usrSrchNm) {
   $("#endButton").empty();
     
   // >>>> DISPLAY MOAR GIFS
-  for (var i = 4; i < 12; i++) {
+  for (var i = 4; i < 24; i++) {
     var topDiv = $("<div>").addClass("col-md-3");
     var gifDiv = $("<div>").addClass("thumbnail");
 
@@ -257,7 +205,7 @@ function displayThirdRow(theObj, userSubmit) {
   $("#gifDisplayMas").empty();
   $("#endButton").empty();
   // I CAN HAZ DISPLAYZ YET MOAR GIFZ
-  for (var i = 12; i < 24; i++) {
+  for (var i = 24; i < 48; i++) {
     var topDiv = $("<div>").addClass("col-md-3");
     var gifDiv = $("<div>").addClass("thumbnail");
 
@@ -323,7 +271,7 @@ $("#userSubmit").on("click", function(e) {
     $(".gifbutton").on("click", function() {
       var giphyTarget = $(this).attr("data-topic");
       var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Y4qlZyj6iyGpwyb1dBVgeqPg87J8D8Zd&q=" +
-        giphyTarget + "&limit=30&lang=en";
+        giphyTarget + "&limit=50&lang=en";
       console.log("queryURL: " + queryURL);
       $.ajax({
         url: queryURL,
@@ -335,7 +283,7 @@ $("#userSubmit").on("click", function(e) {
 
           var results = response.data;
           var infoText = $("<h2>").addClass("text-white").text(`Here are GIFs of "${giphyTarget}":`);
-          var instText = $("<h6>").addClass("text-secondary").text(`Click on each GIF to toggle animations!`);
+          var instText = $("<h6>").addClass("text-secondary magic").text(`Click on each GIF to toggle animations!`);
           // var brk = $("<br>");
           $("#infoBar").append(infoText);
           // $("#infoBar").append(brk);
@@ -360,41 +308,7 @@ $("#userSubmit").on("click", function(e) {
       });
     });
 });
-
-
-
 });
-// i got results[i].images.fixed_width.url
-// and results[i].images.fixed_width_still.url
-
-
-          // $(".giftoggle").on("click", function() {
-          //       // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-          //       var state = $(this).attr("isgifmoving");
-          //       // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-          //       // Then, set the image's data-state to animate
-          //       // Else set src to the data-still value
-          //   console.log(`GIF clicked, state: ${state}`);
-          //       if (state === "nope") {
-          //         $(this).attr("src", $(this).attr("url-moving"));
-          //         $(this).attr("isgifmoving", "yeah");
-          //         console.log(`Changed GIF to moving`);
-          //       } else {
-          //         $(this).attr("src", $(this).attr("url-still"));
-          //         $(this).attr("isgifmoving", "nope");
-          //         console.log(`Changed GIF to still`);
-          //       }
-          // });
-
-          // GIF display round 1
-
-          
-
-
-// $(".giftoggle").on("click", function() {
-
-// });
 </script>
-
 </body>
 </html>
